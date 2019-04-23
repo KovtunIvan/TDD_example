@@ -1,0 +1,8 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+print:
+  path: /print
+  controller: App\Controller\BasicController:print
+

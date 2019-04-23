@@ -1,0 +1,20 @@
+{
+    "symfony/form": {
+        "version": "v4.2.7"
+    },
+    "symfony/inflector": {
+        "version": "v4.2.7"
+    },
+    "symfony/intl": {
+        "version": "v4.2.7"
+    },
+    "symfony/options-resolver": {
+        "version": "v4.2.7"
+    },
+    "symfony/polyfill-intl-icu": {
+        "version": "v1.11.0"
+    },
+    "symfony/property-access": {
+        "version": "v4.2.7"
+    }
+}
