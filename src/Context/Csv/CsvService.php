@@ -2,6 +2,8 @@
 
 namespace App\Context\Csv;
 
+use Exception;
+
 class CsvService
 {
     /**
@@ -12,17 +14,22 @@ class CsvService
     /**
      * CsvService constructor.
      * @param $filename
+     * @throws Exception
      */
     public function __construct($filename)
     {
-        $this->filename = $filename;
+        if (file_exists($filename)) {
+            $this->filename = $filename;
+        } else {
+            throw new Exception("Файл $filename не найден");
+        }
     }
 
     /**
      * Получаем имя файла csv
      * @return string
      */
-    public function getFileName() : string
+    public function getFileName(): string
     {
         return $this->filename;
     }
@@ -31,7 +38,7 @@ class CsvService
      * Чтение csv файла
      * @return array
      */
-    public function getCsv() : array
+    public function getCsv(): array
     {
         $handle = fopen($this->filename, "r");
         $csvData = [];
@@ -47,7 +54,7 @@ class CsvService
      * @param array $data
      * @return array
      */
-    public function setCsv(array $data) : void
+    public function setCsv(array $data): void
     {
         $handle = fopen($this->filename, "a");
         foreach ($data as $value) {
